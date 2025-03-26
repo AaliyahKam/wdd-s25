@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webpage Features</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    Explore Your Perfect Getaway
+  </header>
+
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <div>
+          <a href="#">Home</a>
+          <div class="dropdown-content">
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Career</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Left-hand filter section -->
+    <aside class="filters">
+      <h3>Filter by Category</h3>
+      <select>
+        <option value="">All</option>
+        <option value="beach">Beach</option>
+        <option value="adventure">Adventure</option>
+        <option value="indoor">Indoor</option>
+      </select>
+
+      <h3>Filter by Price</h3>
+      <select>
+        <option value="">All</option>
+        <option value="low">$0 - $50</option>
+        <option value="mid">$51 - $100</option>
+        <option value="high">$101+</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </aside>
+
+    <article>
+      <h2>Discover the Fun</h2>
+      <p>Whether you're craving a beachside escape, thrilling water sports, or vibrant nightlife, we've got something for everyone!</p>
+      <img src="https://www.mexicocity.com/media/uploads/mexicocity.com/2018/01/Cancun.jpg" alt="Cancun Beach" id="article_img">
+
+      <section class="grid-container">
+        <div class="grid-item">
+          <img src="https://images.pexels.com/photos/35646/pexels-photo.jpg?cs=srgb&dl=garden-flower-close-up-35646.jpg&fm=jpg" alt="Beautiful Flowers" />
+          <p>$25 - Flower Garden Tour</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://e1.pxfuel.com/desktop-wallpaper/803/448/desktop-wallpaper-beach-summer-stay-coconut-cocktail-summer-beach-vacation-fruit-drink-coconut-vacation-tropical-palm-section-%D0%B5%D0%B4%D0%B0-summer-drinking.jpg" alt="Refreshing Drinks" />
+          <p>$15 - Tropical Drink Stand</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://th.bing.com/th/id/OIP.aBtrmuFLp4L8EtTElL09YgHaE8?rs=1&pid=ImgDetMain" alt="Amazing Sights" />
+          <p>$60 - Guided City Tour</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://www.vistana.com/wp-content/uploads/2014/08/Jet-Skiing.jpg" alt="Water Activities" />
+          <p>$120 - Jet Ski Adventure</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://th.bing.com/th/id/OIP.mmNwK4qx22f95I6HqqT6lAHaE1?w=274&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" alt="Sunny Sky" />
+          <p>$40 - Scenic Sky View</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://th.bing.com/th/id/OIP.dHrA0D78OUuClsRc4Uy8ggHaE8?w=244&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" alt="Night Outs" />
+          <p>$80 - Night Cruise</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://th.bing.com/th/id/OIP.jw1f96yKCmK_AdGqT4sIkAHaE8?w=272&h=182&c=7&r=0&o=5&dpr=2&pid=1.7" alt="Indoor Fun" />
+          <p>$30 - Indoor Arcade Pass</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://th.bing.com/th/id/OIP.aDYQJr1br9AVm0xJBBK3hAHaE8?w=261&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" alt="Beach Carnival" />
+          <p>$70 - Beach Carnival Admission</p>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">&raquo;</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>Copyright &copy; <a href="https://www.asurams.edu/">Albany State University</a> 2025</p>
+  </footer>
+
+</body>
+</html>
+
