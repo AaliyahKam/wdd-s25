@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Learning Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .section-title {
+      margin-bottom: 2rem;
+    }
+    .subscribe-btn {
+      font-size: 1.1rem;
+      padding: 0.6rem 1.3rem;
+      margin-top: 1rem;
+    }
+    .bg-soft-blue {
+      background-color: #e3f2fd;
+    }
+    .bg-lighter-blue {
+      background-color: #d0e8ff;
+      color: #003366;
+    }
+    .sidebar-box {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Bootstrap Hub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+          Learn Bootstrap
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#basics">Basics</a>
+          <a class="dropdown-item" href="#resources">Resources</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#subscribe">Subscribe</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section with lighter blue -->
+<div id="home" class="container-fluid bg-lighter-blue text-center py-5" style="margin-top: 60px;">
+  <h1 class="display-4">Bootstrap Learning Hub</h1>
+  <p class="lead">Build beautiful responsive websites using Bootstrap's grid and components.</p>
+</div>
+
+<!-- About Section directly under Hero -->
+<div id="about" class="container py-5">
+  <h2 class="text-center section-title">About This Page</h2>
+  <div class="row">
+    <div class="col-md-8 mb-4">
+      <p>This page was created to demonstrate the power of Bootstrap 4. Using a series of stacked containers, rows, and responsive columns, this webpage showcases core concepts such as layout, utility classes, components, and responsive design strategies.</p>
+      <p>Bootstrap allows web developers to rapidly build interfaces that work across mobile, tablet, and desktop screens without writing custom CSS for everything.</p>
+    </div>
+    <div class="col-md-4">
+      <div class="sidebar-box">
+        <h5 class="text-primary">Quick Facts</h5>
+        <ul class="list-unstyled">
+          <li><strong>Framework:</strong> Bootstrap 4</li>
+          <li><strong>Focus:</strong> Responsive Design</li>
+          <li><strong>Tools Used:</strong> HTML, CSS, JS</li>
+          <li><strong>Created for:</strong> CSCI4915 @ ASU</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Basics -->
+<div id="basics" class="container py-5">
+  <h2 class="text-center section-title">Bootstrap Basics</h2>
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="bg-info text-white p-4 rounded shadow">
+        <h4>Containers</h4>
+        <p>Use <code>.container</code> and <code>.container-fluid</code> to structure content responsively.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="bg-success text-white p-4 rounded shadow">
+        <h4>Grid System</h4>
+        <p>Divide your layout into 12 columns for dynamic content flow across devices.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="bg-warning text-dark p-4 rounded shadow">
+        <h4>Utility Classes</h4>
+        <p>Bootstrap includes helpers for spacing, colors, alignment, and more.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Resources Section -->
+<div id="resources" class="container-fluid bg-soft-blue py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Bootstrap Resources</h2>
+    <ul class="nav nav-tabs justify-content-center">
+      <li class="nav-item"><a class="nav-link active" href="#">Documentation</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Video Guides</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Templates</a></li>
+    </ul>
+    <div class="mt-3 text-center">
+      <p><strong>Documentation:</strong> Start with the official Bootstrap docs to explore every feature and class available.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Subscribe Section -->
+<div id="subscribe" class="container py-5 text-center">
+  <h2 class="section-title">Subscribe for Weekly Tips</h2>
+  <p>Join our mailing list to stay updated on Bootstrap tips and new layout tricks.</p>
+  <form class="mx-auto" style="max-width: 600px;">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" placeholder="Your name">
+      </div>
+      <div class="form-group col-md-6">
+        <input type="email" class="form-control" placeholder="Your email">
+      </div>
+    </div>
+    <div class="custom-control custom-switch mb-3 text-left">
+      <input type="checkbox" class="custom-control-input" id="optIn">
+      <label class="custom-control-label" for="optIn">I agree to receive updates</label>
+    </div>
+    <button type="submit" class="btn btn-outline-primary subscribe-btn">Subscribe</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-dark text-white text-center py-4">
+  <p class="mb-0">&copy; 2025 Bootstrap Learning Hub | Albany State University CSCI4915</p>
+</footer>
+
+</body>
+</html>
