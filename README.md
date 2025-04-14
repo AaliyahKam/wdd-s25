@@ -29,4 +29,14 @@ This phase introduced Responsive Web Design (RWD) concepts and advanced CSS tech
 - Flexbox & Grid Refinements for better image alignment and responsiveness
 - Media Queries to adjust layouts for mobile devices (hiding sidebar & footer)
 - Smooth Hover Transitions using cubic-bezier() for interactive elements
-This phase made the website fully responsive, scalable, and visually polished across all devices. 
+This phase made the website fully responsive, scalable, and visually polished across all devices.
+
+# Part 4: Bootstrap Learning Hub
+- Created a single-page responsive website (hw4.html) using the Bootstrap 4 framework
+- Used stacked containers with rows and Bootstrap’s 12-column grid layout (col-md-*, col-lg-*)
+- Included a navigation bar with a dropdown menu for structured site navigation
+- Designed a hero section with a soft blue background and centered intro text
+- Added an "About This Page" section with a main description and sidebar for quick facts
+- Applied utility classes (bg-*, text-*, btn-outline-*) for consistent styling
+- Integrated components such as cards, tabs, buttons, and responsive forms
+- Focused on typography, spacing, and layout for clarity, visual appeal, and accessibility
