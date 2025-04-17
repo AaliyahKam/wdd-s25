@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #0056b3;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0056b3;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .quiz {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .quiz button {
+            margin-top: 10px;
+        }
+        .results {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cybersecurity Basics</h1>
+</header>
+
+<nav>
+    <a href="#what-is-cybersecurity">What is Cybersecurity?</a>
+    <a href="#types-of-threats">Types of Threats</a>
+    <a href="#best-practices">Best Practices</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#results">Results</a>
+</nav>
+
+<section id="what-is-cybersecurity">
+    <h2>What is Cybersecurity?</h2>
+    <p>Cybersecurity involves protecting computer systems, networks, and data from theft, damage, or unauthorized access. It is essential for maintaining the integrity and confidentiality of information.</p>
+</section>
+
+<section id="types-of-threats">
+    <h2>Types of Threats</h2>
+    <ul>
+        <li>Malware</li>
+        <li>Phishing</li>
+        <li>Ransomware</li>
+        <li>DDoS Attacks</li>
+    </ul>
+</section>
+
+<section id="best-practices">
+    <h2>Best Practices</h2>
+    <p>To enhance your cybersecurity, consider the following best practices:</p>
+    <ol>
+        <li>Use strong, unique passwords.</li>
+        <li>Keep your software updated.</li>
+        <li>Enable two-factor authentication.</li>
+        <li>Be cautious of suspicious emails and links.</li>
+    </ol>
+</section>
+
+<section id="quiz" class="quiz">
+    <h2>Quiz: Test Your Knowledge</h2>
+    <p>1. What does "phishing" refer to?</p>
+    <label><input type="radio" name="q1" value="a"> A type of malware</label><br>
+    <label><input type="radio" name="q1" value="b"> An attempt to trick users into revealing personal information</label><br>
+    <label><input type="radio" name="q1" value="c"> A secure connection method</label><br>
+    <button onclick="checkAnswer('q1', 'b', 'Phishing is indeed an attempt to trick users into revealing personal information.');">Submit</button>
+    <p id="result-q1"></p>
+
+    <p>2. What is a strong password?</p>
+    <label><input type="radio" name="q2" value="a"> "password123"</label><br>
+    <label><input type="radio" name="q2" value="b"> "Qw3rty!@#"</label><br>
+    <label><input type="radio" name="q2" value="c"> "12345678"</label><br>
+    <button onclick="checkAnswer('q2', 'b', 'Correct! A strong password should include a mix of letters, numbers, and symbols.');">Submit</button>
+    <p id="result-q2"></p>
+    
+    <button onclick="showResults()">Show Results</button>
+</section>
+
+<section id="results" class="results" style="display:none;">
+    <h2>Quiz Results Summary</h2>
+    <p id="results-summary"></p>
+    <button onclick="resetQuiz()">Retake Quiz</button>
+</section>
+
+<footer>
+    <p>&copy; 2025 Cybersecurity Basics. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let score = 0;
+
+    function checkAnswer(question, correctAnswer, feedback) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const resultElement = document.getElementById(`result-${question}`);
+        
+        if (!selected) {
+            resultElement.textContent = "Please select an answer.";
+            return;
+        }
+
+        if (selected.value === correctAnswer) {
+            resultElement.textContent = "Correct! " + feedback;
+            resultElement.style.color = "green";
+            score++;
+        } else {
+            resultElement.textContent = "Incorrect. " + feedback;
+            resultElement.style.color = "red";
+        }
+    }
+
+    function showResults() {
+        const resultsElement = document.getElementById('results-summary');
+        resultsElement.textContent = `You answered ${score} out of 2 questions correctly.`;
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('results').style.display = 'block';
+    }
+
+    function resetQuiz() {
+        score = 0;
+        document.querySelectorAll('input[type="radio"]:checked').forEach((input) => {
+            input.checked = false;
+        });
+        document.querySelectorAll('[id^="result-"]').forEach((result) => {
+            result.textContent = '';
+        });
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('results').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
