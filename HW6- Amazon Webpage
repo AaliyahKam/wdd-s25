@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Shipping Address Replica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .checkout-steps {
+      background-color: #ededed;
+      font-size: 0.9rem;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    .checkout-step {
+      font-weight: bold;
+      color: #555;
+    }
+    .active-step {
+      color: #000;
+    }
+    .address-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .section-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .btn-amazon {
+      background-color: #f0c14b;
+      border-color: #a88734;
+      color: #111;
+      font-weight: bold;
+    }
+    .btn-amazon:hover {
+      background-color: #ddb347;
+    }
+    .form-header {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    .form-label {
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body onload="documentReady()">
+
+<!-- Top Checkout Step Progress -->
+<div class="checkout-steps">
+  <span class="checkout-step">Sign In</span>
+  <span class="checkout-step active-step">› Shipping & Payment</span>
+  <span class="checkout-step">› Gift Options</span>
+  <span class="checkout-step">› Place Order</span>
+</div>
+
+<div class="container mt-4">
+  <div class="section-header">Select a shipping address</div>
+  <p>Is the address you'd like to use displayed below? If so, click the corresponding "Deliver to this address" button. Or you can <a href="#">enter a new shipping address</a>.</p>
+
+  <div class="row">
+    <!-- Address 1 -->
+    <div class="col-md-6">
+      <div class="address-box">
+        <strong id="addr1-name"></strong><br>
+        <span id="addr1-details"></span><br>
+        <span id="addr1-phone"></span><br>
+        <a href="#">Add delivery instructions</a><br><br>
+        <button class="btn btn-amazon btn-sm mb-2" onclick="deliverTo('addr1')">Deliver to this address</button><br>
+        <button class="btn btn-secondary btn-sm">Edit</button>
+        <button class="btn btn-light btn-sm">Remove</button>
+      </div>
+    </div>
+
+    <!-- Address 2 -->
+    <div class="col-md-6">
+      <div class="address-box">
+        <strong id="addr2-name"></strong><br>
+        <span id="addr2-details"></span><br><br>
+        <button class="btn btn-amazon btn-sm mb-2" onclick="deliverTo('addr2')">Deliver to this address</button><br>
+        <button class="btn btn-secondary btn-sm">Edit</button>
+        <button class="btn btn-light btn-sm">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add a new address -->
+  <div class="form-header">Add a new address</div>
+  <form id="addressForm">
+    <div class="form-group">
+      <label class="form-label">Country/Region</label>
+      <select class="form-control form-control-sm">
+        <option>United States</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Full name (First and Last name)</label>
+      <input type="text" class="form-control form-control-sm" id="fullname">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Phone number</label>
+      <input type="tel" class="form-control form-control-sm" id="phone">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Address</label>
+      <input type="text" class="form-control form-control-sm" id="street" placeholder="Street address or P.O. Box">
+      <input type="text" class="form-control form-control-sm mt-1" placeholder="Apt, suite, unit, building, floor, etc.">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label class="form-label">City</label>
+        <input type="text" class="form-control form-control-sm" id="city">
+      </div>
+      <div class="form-group col-md-3">
+        <label class="form-label">State</label>
+        <select class="form-control form-control-sm" id="state">
+          <option>GA</option>
+          <option>FL</option>
+          <option>AL</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label class="form-label">ZIP Code</label>
+        <input type="text" class="form-control form-control-sm" id="zip">
+      </div>
+    </div>
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" id="default">
+      <label class="form-check-label">Make this my default address</label>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Delivery instructions (optional)</label><br>
+      <a href="#">Add preferences, notes, access codes and more</a>
+    </div>
+    <button type="button" class="btn btn-amazon" onclick="submitNewAddress()">Use this address</button>
+  </form>
+</div>
+
+<script>
+function documentReady() {
+  document.getElementById("addr1-name").innerText = "Aaliyah Lockett";
+  document.getElementById("addr1-details").innerText = "504 College Dr., Albany GA 31705\nUnited States";
+  document.getElementById("addr1-phone").innerText = "Phone: 229-500-2283";
+
+  document.getElementById("addr2-name").innerText = "Amazon Hub";
+  document.getElementById("addr2-details").innerText = "Counter - Belk Map\n1811 N St. Augustine Road\nValdosta, GA 31601-3533\nUnited States";
+}
+
+function deliverTo(id) {
+  const name = document.getElementById(`${id}-name`).innerText;
+  alert(`You selected:\n${name}\nShipping will be sent here.`);
+}
+
+function submitNewAddress() {
+  const name = document.getElementById("fullname").value;
+  const phone = document.getElementById("phone").value;
+  const street = document.getElementById("street").value;
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+  const zip = document.getElementById("zip").value;
+
+  if (name && phone && street && city && state && zip) {
+    alert(`New address saved:\n${name}\n${street}, ${city}, ${state} ${zip}\nPhone: ${phone}`);
+  } else {
+    alert("Please fill out all required fields.");
+  }
+}
+</script>
+
+</body>
+</html>
+
