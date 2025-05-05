@@ -40,3 +40,29 @@ This phase made the website fully responsive, scalable, and visually polished ac
 - Applied utility classes (bg-*, text-*, btn-outline-*) for consistent styling
 - Integrated components such as cards, tabs, buttons, and responsive forms
 - Focused on typography, spacing, and layout for clarity, visual appeal, and accessibility
+
+# Project 5: AI-Powered Website Generation
+This project explores the use of artificial intelligence in software development by leveraging modern AI tools to generate a complete website. It emphasizes the growing importance of AI-assisted development and encourages students to adapt to industry changes by learning how to work with AI.
+- Investigates how AI is reshaping the role of software engineers.
+- Encourages CS majors to embrace AI as a tool rather than fear it as a replacement.
+- Promotes understanding of the capabilities and limitations of AI-generated code.
+- Uses AI tools such as:
+    - ChatGPT 4.0 (via OpenAI or POE.com)
+    - GitHub Copilot
+    - Microsoft Copilot
+    - Hugging Face AI models
+- Website generated using natural language prompts and code output from the selected AI assistant.
+- Reinforces the skill of interpreting, debugging, and improving AI-generated code.
+
+# Part 6: Frost & Swirl
+- Built on top of a Bootstrap layout from Project 4.
+- Uses JavaScript to:
+    - Display rotating “Daily Specials” with each click.
+    - Capture form data using input fields and checkboxes.
+    - Show alerts based on user input and order selections.
+    - Sidebar navigation with clickable internal links (anchor tags).
+- Form features:
+    - Name & password fields
+    - Menu item checkboxes
+    - Submit button triggers a confirmation message
+- Responsive design and styling using Google Fonts, colors, and layout containers.
